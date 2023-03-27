@@ -22,13 +22,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ProductReadComponent } from './component/product/product-read/product-read.component';
 import { ProductRead2Component } from './component/product/product-read2/product-read2.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
+import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,8 @@ import { MatSortModule } from '@angular/material/sort';
     ProductCreateComponent,
     ProductReadComponent,
     ProductRead2Component,
+    ProductUpdateComponent,
+    ProductDeleteComponent
     
   ],
   imports: [
@@ -60,7 +65,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { ProductRead2DataSource, ProductRead2Item } from './product-read2-datasource';
+import { ProductRead2DataSource } from './product-read2-datasource';
+import { Product } from '../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-read2',
@@ -12,14 +14,23 @@ import { ProductRead2DataSource, ProductRead2Item } from './product-read2-dataso
 export class ProductRead2Component implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<ProductRead2Item>;
+  @ViewChild(MatTable) table!: MatTable<Product>;
   dataSource: ProductRead2DataSource;
+  product: Product[] = [];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'price'];
 
-  constructor() {
-    this.dataSource = new ProductRead2DataSource();
+  constructor(private serviceProduct: ProductService) {
+    this.dataSource = new ProductRead2DataSource(this.readTable());
+  }
+
+  readTable(): Product[] {
+    const read = this.serviceProduct.read().subscribe(products => {
+      this.product = products;
+      console.log(this.product);
+    });
+    return this.product;
   }
 
   ngAfterViewInit(): void {

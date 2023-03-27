@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+}
+.title{
+    color: #222;
+}
+
+.container label {
+    color: #444;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+button {
+    margin: 20px 15px 0 0 ;
+}
