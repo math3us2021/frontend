@@ -1,0 +1,33 @@
+<!-- <p #child>child1 works!</p>
+<p>{{father}}</p> -->
+<!-- <form (ngSubmit)="onSubmit()" >
+    <input type="text" #child>
+    <button type="submit">Enviar</button>
+</form> -->
+
+<form 
+    [formGroup]="formulario" 
+    (ngSubmit)="onSubmit()"
+    
+    >
+
+    <div class="form-group" [ngClass]="aplicCssErro('name')">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <app-error-control
+        [showErrors]="verifyValidTouched('name')"
+        msgError="Nome é obrigatório"
+    ></app-error-control>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">
+            Enviar
+        </button>
+    </div>
+</form>

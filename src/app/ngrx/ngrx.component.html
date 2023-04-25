@@ -1,0 +1,13 @@
+<p>ngrx works!</p>
+<button routerLink="/todos">TODOS</button>
+<button routerLink="/">HOME</button>
+<br>
+<h1>{{ counter$ | async }}</h1>
+<button (click)="increment()">Incrementar</button>
+<button (click)="decrement()">Decrementar</button>
+<br>
+<br>
+<input #input type="text">
+<button (click)="definirContador(input.value)" >Definir</button>
+
+<app-child></app-child>

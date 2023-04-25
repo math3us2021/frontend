@@ -1,0 +1,9 @@
+<p>todo-component works!</p>
+<button routerLink="/ngrx">NgRx</button>
+<br />
+<br />
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    {{ todo.title }}
+  </li>
+</ul>

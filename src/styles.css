@@ -10,3 +10,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .v-meddle{
     vertical-align: middle;
 }
+
+.msg-success {
+    background-color: #28a745 !important;
+    color: fff !important;
+}
+
+.msg-error{
+    background-color: rgb(227, 94, 107);
+}
+
+.home{
+    background-color: #f1eaea;
+    display: flex;
+    flex-direction: column; 
+}
+.internal{
+    border: 1px solid #3d3a3a;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+}

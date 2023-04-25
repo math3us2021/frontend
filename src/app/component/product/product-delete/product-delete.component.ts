@@ -10,7 +10,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./product-delete.component.css']
 })
 export class ProductDeleteComponent implements OnInit{
-  @Output() onProductDeleted = new EventEmitter();
   product: Product = {
     name: "",
     price: null,

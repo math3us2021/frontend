@@ -32,13 +32,8 @@ export class ProductReadComponent implements OnInit {
       data: { product_id: id }
     });
     dialogRef.afterClosed().subscribe(() => {
-      this.updateTable(); // atualiza a tabela quando o modal é fechado
+      this.ngOnInit(); // atualiza a tabela quando o modal é fechado
     });
   }
 
-  updateTable(): void {
-    this.serviceProduct.read().subscribe(products => {
-      this.products = products;
-    });
-  }
 }

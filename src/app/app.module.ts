@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,27 @@ import { ProductReadComponent } from './component/product/product-read/product-r
 import { ProductRead2Component } from './component/product/product-read2/product-read2.component';
 import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
+import { ObservableComponent } from './obs/observable/observable.component';
+import { Observable2Component } from './obs/observable2/observable2.component';
+import { Observable3Component } from './obs/observable3/observable3.component';
+import { Child1Component } from './obs/observable/child1/child1.component';
+import { Child2Component } from './obs/observable2/child2/child2.component';
+import { Child3Component } from './obs/observable3/child3/child3.component';
+import { RxjsComponent } from './obs/rxjs/rxjs.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorControlComponent } from './obs/observable/error-control/error-control.component';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { NgrxComponent } from './ngrx/ngrx.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.state';
+import { ChildComponent } from './ngrx/child/child.component';
+import { EffectsModule } from '@ngrx/effects';
+import { NgrxService } from './ngrx/ngrx.service';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TodoComponentComponent } from './ngrx/todo-component/todo-component.component';
+import { TodosService } from './store/todos.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,9 +67,20 @@ import { ProductDeleteComponent } from './component/product/product-delete/produ
     ProductReadComponent,
     ProductRead2Component,
     ProductUpdateComponent,
-    ProductDeleteComponent
-    
+    ProductDeleteComponent,
+    ObservableComponent,
+    Observable2Component,
+    Observable3Component,
+    Child1Component,
+    Child2Component,
+    Child3Component,
+    RxjsComponent,
+    ErrorControlComponent,
+    NgrxComponent,
+    ChildComponent,
+    TodoComponentComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -66,7 +98,14 @@ import { ProductDeleteComponent } from './component/product/product-delete/produ
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    TimepickerModule.forRoot(),
+    StoreModule.forRoot({
+      app: appReducer
+    }, {}),
+    EffectsModule.forRoot([ TodosService ]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]
