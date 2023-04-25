@@ -7,7 +7,6 @@ import { Store } from "@ngrx/store";
 import { loadTodos, setTodos, sucessoTodos } from './action';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
