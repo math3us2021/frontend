@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IAppState, incrementaContador } from '../store/app.state';
+import { IAppState } from '../store/app.state';
 import { map } from 'rxjs';
+import { incrementaContador } from '../store/action';
 
 @Component({
   selector: 'app-ngrx',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { IAppState, ITodo, loadTodos, setTodos, sucessoTodos } from '../store/app.state';
+import { IAppState, ITodo } from '../store/app.state';
 import { of, switchMap, withLatestFrom, map, tap } from 'rxjs';
 import { Store } from "@ngrx/store";
 

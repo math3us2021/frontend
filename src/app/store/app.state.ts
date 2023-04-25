@@ -1,4 +1,5 @@
-import { createAction, createReducer, on, props } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
+import { decrementaContador, defineContador, incrementaContador, setTodos, sucessoTodos } from "./action";
 
 export interface ITodo {
     userId: number;
@@ -16,21 +17,6 @@ export const INITIAL_STATE: IAppState = { // define o estado inicial da aplicaç
     counter: 5,
     todos: []
 }
-
-export const incrementaContador = createAction('INCREMENTA_CONTADOR')
-export const decrementaContador = createAction('DECREMENTA_CONTADOR', /// nome da ação
-)
-export const defineContador = createAction('DEFINE_CONTADOR', /// nome da ação
-props<{payload: number}>() ///props é utilizado para passar parametros para a action
-)
-
-
-export const setTodos = createAction('SET_TODOS',
-    props<{ payload: any }>()
-    )
-export const loadTodos = createAction('LOAD_TODOS')
-export const sucessoTodos = createAction('SUCESS_TODOS')
-
 
 export const appReducer = createReducer(
     INITIAL_STATE, /// valor inicial do estado

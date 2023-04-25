@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
-import { IAppState, loadTodos } from 'src/app/store/app.state';
+import { loadTodos } from 'src/app/store/action';
+import { IAppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-todo-component',
